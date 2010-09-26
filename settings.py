@@ -7,7 +7,7 @@ DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 DEBUG_APPS_DJANGO_EXTENSIONS = False
 DEVELOPMENT = False
-SERVE_STATIC_CONTENT = False
+SERVE_STATIC_CONTENT = True
 
 import os
 PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "./"))
@@ -59,8 +59,8 @@ USE_I18N = True
 
 # Absolute path to the directory that holds media.
 # Example: "/home/media/media.lawrence.com/"
-MEDIA_ROOT = 'site_media/'
-#MEDIA_ROOT = os.path.join(PROJECT_ROOT, 'site_media')
+#MEDIA_ROOT = 'site_media/'
+MEDIA_ROOT = os.path.join(PROJECT_ROOT, 'site_media')
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash if there is a path component (optional in other cases).
@@ -142,11 +142,11 @@ except ImportError:
 	pass
 
 TEMPLATE_CONTEXT_PROCESSORS = (
-				"django.core.context_processors.auth",
-				"django.core.context_processors.debug",
-				"django.core.context_processors.i18n",
-				"django.core.context_processors.media",
-				'django.core.context_processors.request',
+    "django.core.context_processors.auth",
+    "django.core.context_processors.debug",
+    "django.core.context_processors.i18n",
+    "django.core.context_processors.media",
+    'django.core.context_processors.request',
 )
 
 LOGIN_URL = '/login/'
