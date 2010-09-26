@@ -16,4 +16,8 @@
 #    along with descartes-bi.  If not, see <http://www.gnu.org/licenses/>.
 #
 #!/bin/sh
-./manage.py runserver --adminmedia ./site_media/admin_media/
+if [ -n "$1" ]; then
+	./manage.py runserver $1 --adminmedia ./site_media/admin_media/
+else
+	./manage.py runserver --adminmedia ./site_media/admin_media/
+fi
