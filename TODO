@@ -1,0 +1,35 @@
+
+******** TODO/Whishlist *********
+* Printer output support
+* Add intellingent js thousand comma
+* Report timeout -> to avoid infinite "LOADING..."
+* Please "LOGIN" callout in open panel for clueless users :S
+* General statistics like: % of series validated, total series, total reports, orphan reports
+* Tick format cbo box(number, string, currency, user specified) other = %00.f.ss
+* Plugable charting engines jqPlot/FLOT/etc
+* Angled label text
+* Stacked bars
+* Dynamic GROUP BY from ajax GUI ie: By month, year, employee
+* Dynamic enable/disable series from parameters window
+* Published report field &
+	- 'Access unpublished reports'  permission
+* Per user Favorites charts
+* Dashboard w/ multiple charts
+* New chart type - endless timeline
+* New chart type - 3d bar
+* User can access reports that they create
+* Configuration backup - STARTED
+* Written documentation
+* Allow anonymous access to reports
+* Date helpers (This month, prev. month, this year, prev year, fiscal year, prev fiscal year)
+* Charts can override filter defaults
+* Chart sets w/ same parameters  ie: monthly report
+* jq.layout plugin
+* Multi DB source system (like replicate app)
+* Add simple reports support (grouping, headers, etc)
+* Drilldowns
+* Generic relationship based menu ( to allow to add either reports or charts)
+* Icon next to menu entry to id charts & reports
+* Anchor navigation
+* Validate html w/ w3c
+

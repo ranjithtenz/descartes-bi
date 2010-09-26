@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load project_tags %}
+{% block keywords %}
+{% endblock %}
+{% block title %} :: {% trans 'ERROR 500' %}{% endblock %}
+{% block banner %}{% trans 'ERROR 500' %}{% endblock %}
+{% block content %}
+
+<center>
+<h1><strong>{% trans 'ERROR 500' %}</strong></h1>
+<img src="{{ MEDIA_URL }}images/no_signal.jpg" alt="error picture" /><br />
+<p>{% blocktrans %}Oops, it seems you did something that {{ project_name }} did not expected.{% endblocktrans %}</p>
+<p>{% trans 'Please contact the system administrator for further assitance.' %}</p>
+</center>
+{% endblock %}

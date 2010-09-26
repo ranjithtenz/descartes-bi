@@ -1,0 +1,50 @@
+body { margin:0; padding:0; background:#fff; color:black; }
+body, th, td { font:12px/1.4em Verdana,sans-serif; }
+#container { position:relative; min-width:55em; }
+
+#header { position:relative; height:6.0em; background:#fff; display: none; }
+#logo { margin:0; padding:0; display: none; }
+
+.data-entry { margin: 20px; }
+.data-entry table { text-align: center;	margin-left: auto;	margin-right: auto;	border: 1px solid white; }
+.data-entry thead {}	
+.data-entry thead td {	background:#7070c0;	font-size: 15px;	font-weight:bold;	text-align:center;	padding: 5px;	border-top: 1px solid white;	border-left: 1px solid white;	border-right: 1px solid white;	border-bottom: 1px solid olive;	}
+.data-entry th { text-align: right;	padding: 5px;	font-weight:bold;	background:#0000a0;	}
+.data-entry td { text-align: left;	padding: 3px;  font-size: 100%; }
+.data-entry td input:focus { background: yellow; }
+.data-entry td textarea:focus { background: yellow; }
+.data-entry tr { margin: 5px; }
+.data-entry tfoot { background:#7070c0;	font-size: 15px; font-weight:bold; }
+.data-entry tfoot td { text-align: right; padding: 3px;	border-top: 1px solid olive; border-left: 1px solid olive; border-right: 1px solid olive; border-bottom: 1px solid olive; }
+
+#js_noscript { display: none; }
+.error-message { display: none; }
+
+#footer { display: none; }
+#loading { display: none; }
+
+.sf-menu { display: none; }
+#menu { display: none; }
+#toppanel { display: none; }
+#panel { display: none; }
+
+.leftmenu .colleft {
+	right: 0px;			/* right column width */
+	float: none;
+}
+.leftmenu .col1 {
+	width: 100%;			/* right column content width */
+	left: 0px;			/* 100% plus left column left padding */
+	float: none;
+}
+.leftmenu .col2 {
+	float: none;
+	width: 100%;			/* left column content width (column width minus left and right padding) */
+	left: 0px;			/* (right column left and right padding) plus (left column left padding) */
+	display: none;
+}	   
+	   
+ body { background-color: white; color: black; }
+.colmask { clear: both; width: 100%; border: 0; margin: 0px; padding: 0;  }
+
+#calculated { display: none; }

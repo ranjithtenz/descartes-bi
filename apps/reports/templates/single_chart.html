@@ -1,0 +1,170 @@
+{% load simplehelpers %}
+{% load i18n %}
+{% if not chart_data %}
+	{% with 'Attention' as title %}
+	{% with 'There are no results for the selected parameters, choose other values.' as message %}
+	{% include "messagebox-attention.html" %}
+	{% endwith %}
+	{% endwith %}
+{% else %}
+<!--[if IE]><script language="javascript" type="text/javascript" src="{{ MEDIA_URL }}packages/jqplot-0.9.5.1/excanvas.min.js"></script><![endif]-->
+<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}packages/jqplot-0.9.5.1/jquery.jqplot.min.css" />
+<script language="javascript" type="text/javascript" src="{{ MEDIA_URL }}packages/jqplot-0.9.5.1/jquery.jqplot.min.js"></script>
+<script language="javascript" type="text/javascript" src="{{ MEDIA_URL }}packages/jqplot-0.9.5.1/plugins/jqplot.categoryAxisRenderer.min.js"></script>
+<script language="javascript" type="text/javascript" src="{{ MEDIA_URL }}packages/jqplot-0.9.5.1/plugins/jqplot.canvasTextRenderer.min.js" /></script>
+<script language="javascript" type="text/javascript" src="{{ MEDIA_URL }}packages/jqplot-0.9.5.1/plugins/jqplot.canvasAxisTickRenderer.min.js" /></script>
+<script language="javascript" type="text/javascript" src="{{ MEDIA_URL }}packages/jqplot-0.9.5.1/plugins/jqplot.canvasAxisLabelRenderer.min.js" /></script>
+
+{% if chart.trendline %}
+	<script language="javascript" type="text/javascript" src="{{ MEDIA_URL }}packages/jqplot-0.9.5.1/plugins/jqplot.trendline.min.js" /></script>
+{% endif %}
+
+{% if chart.pointlabels %}
+	<script language="javascript" type="text/javascript" src="{{ MEDIA_URL }}packages/jqplot-0.9.5.1/plugins/jqplot.pointLabels.min.js"></script>
+{% endif %}
+
+{% if chart.highlighter %}
+	<script language="javascript" type="text/javascript" src="{{ MEDIA_URL }}packages/jqplot-0.9.5.1/plugins/jqplot.highlighter.min.js" /></script>
+{% endif %}
+
+{% if chart.zoom or chart.tracking %}
+	<script type="text/javascript" src="{{ MEDIA_URL }}packages/jqplot-0.9.5.1/plugins/jqplot.cursor.min.js" /></script>
+{% endif %}
+
+<script language="javascript" type="text/javascript" src="{{ MEDIA_URL }}packages/jqplot-0.9.5.1/plugins/jqplot.barRenderer.min.js"></script>
+
+{% ifequal chart.type 'PI' %}
+	<script language="javascript" type="text/javascript" src="{{ MEDIA_URL }}packages/jqplot-0.9.5.1/plugins/jqplot.pieRenderer.min.js"></script>
+{% endifequal %}
+
+{% if 0 %}
+QUERY: {{ query }}<br />
+PARAMS: {{ params }}<br />
+CHART_DATA: {{ chart_data }}<br />
+{% endif %}
+
+<div class="jqPlot" id="chart1" style="height: 97%; width: 100%; margin:auto; font-size: 110%; color: black; font-color: red; float: left;">
+<script type="text/javascript">
+
+	plot1 = $.jqplot('chart1', [{{ chart_data|safe }}], { 
+		title:'{{ chart.title }}', 
+
+//	    stackSeries: true,
+		{% if chart.legend %}
+			legend:{ show: true, location: '{{ chart.legend_location|default:"ne" }}' },
+		{% endif %}
+	    seriesDefaults: {
+			//showMarker:false, 
+			pointLabels:{location:'{{ chart.pointlabels_location|default:"n" }}'}//, ypadding:33}		
+		},
+
+		{% ifnotequal chart.type 'PI' %}
+		axes:{
+			{{ h_axis }}axis:{
+//				labelRenderer: $.jqplot.CanvasAxisLabelRenderer,
+				{% if chart.series_label %}label: '{{ chart.series_label }}',{% endif %}
+				autoscale: true,
+				renderer:$.jqplot.CategoryAxisRenderer
+//				,ticks:['2009', '2009_2', '2009_3']
+//				,tickRenderer: $.jqplot.CanvasAxisTickRenderer
+//				,tickOptions: {
+//					angle: -90
+//					fontSize: '10pt'
+//				}
+			},
+
+			{% for s in chart_series %}
+				{{ v_axis }}{% if not chart.use_one_scale %}{% ifnotequal chart_series.count 1 %}{{ forloop.counter|add:"1" }}{% endifnotequal %}{% endif %}axis:{
+				autoscale: true,
+
+{% comment %}				
+				{% if chart.use_series_label %}
+					label: '{{ s.serie.label }}',
+				{% else %}
+					{% if chart.scale_label %}label: '{{ chart.scale_label }}',{% endif %}
+				{% endif %}
+				{% if forloop.last %}
+{% endcomment %}
+
+{% comment %}
+				{% if series_labels %}
+					{% if series_labels|hash:forloop.counter0  %}
+						label: '{{ series_labels|hash:forloop.counter0|hash:1 }}',
+					{% endif %}	
+				{% endif %}
+
+				//Old
+				{% if s.serie.label %}
+					label: '{{ s.serie.label }}',
+				{% endif %}
+{% endcomment %}
+
+				{% if s.serie.label %}
+					label: {% ifnotequal chart_series.count 1 %}{% if chart.use_one_scale %}'{{ chart.scale_label_override|default_if_none:"" }}'{% else %}'{{ s.serie.label }}'{% endif %}{% else %}'{{ s.serie.label }}'{% endifnotequal %},
+				{% endif %}
+	
+				
+				labelRenderer: $.jqplot.CanvasAxisLabelRenderer,
+				tickOptions: {
+					angle: -90
+				},
+
+
+//				tickRenderer: $.jqplot.CanvasAxisTickRenderer,
+//				tickOptions: {
+//					angle: -30,
+//				}
+				
+					tickOptions: {
+						formatString: '{{ s.serie.tick_format|default:"%d" }}'
+					}
+					{% if s.zerobase %}
+						,min: 0
+					{% endif %}
+				 } {% if not forloop.last %},{% endif %} 
+			{% endfor %}
+			},
+		{% endifnotequal %}
+
+		series: [
+			{% for s in chart_series %}
+				{ label: '{{ s.serie.label }}' 
+					{% if not chart.use_one_scale %}{% ifnotequal chart_series.count 1 %}
+						,{{ v_axis }}axis:'{{ v_axis }}{{ forloop.counter|add:"1" }}axis'
+					{% endifnotequal %}{% endif %}
+					{% ifequal chart.type 'PI' %}
+						,renderer:$.jqplot.PieRenderer,
+						rendererOptions:{
+							sliceMargin: 12
+						}
+					{% else %}
+						{% ifequal s.type 'BA' %}
+							,renderer:$.jqplot.BarRenderer,
+							rendererOptions:{{% ifequal chart.orientation 'h' %}barDirection: 'horizontal'{% else %}barPadding: 8, barMargin: 20{% endifequal %} }
+						{% endifequal %}
+					{% endifequal %}
+				} {% if not forloop.last %},{% endif %}
+			{% endfor %}
+		]
+		{% if not chart.use_one_scale %}{% ifnotequal chart_series.count 1 %}
+			,axesDefaults:{ useSeriesColor: true }
+		{% endifnotequal %}{% endif %}
+		
+		,cursor: { {% if chart.zoom %} showTooltip:false, zoom:true, clickReset:true {% endif %}
+			{% if chart.tracking %}
+				{% if chart.zoom %},{% endif %}
+				showVerticalLine: true,
+				showHorizontalLine: true,
+				showCursorLegend: false,
+				intersectionThreshold: 66
+			{% endif %}
+			}
+		
+	});
+
+</script>
+</div>
+<div id='calculated' style="float: left;">
+	<small>{% blocktrans with time_delta.seconds as seconds and time_delta.microseconds as microseconds %}Calculated in: {{ seconds }}.{{ microseconds }} seconds.{% endblocktrans %}</small>
+</div>
+{% endif %}

@@ -1,0 +1,101 @@
+	/* <!-- */
+	/* General styles */
+	body {
+		margin:0;
+		padding:0;
+		border:0;			/* This removes the border around the viewport in old versions of IE */
+		width:100%;
+		background:#fff;
+		min-width:600px;    	/* Minimum width of layout - remove line if not required */
+						/* The min-width property does not work in old versions of Internet Explorer */
+		font-size:90%;
+	}
+	
+	/* Header styles */
+	#header {
+		clear:both;
+/*		float:left;  - clashes with login sliding panel */
+		width:100%;
+	}
+	#header {
+		/* border-bottom:1px solid #000; */
+	}
+	#header p,
+	#header h1,
+	#header h2 {}
+	#header ul {
+		clear:left;
+		float:left;
+		width:100%;
+		list-style:none;
+		margin:10px 0 0 0;
+		padding:0;
+	}
+	/* 'widths' sub menu */
+	#layoutdims {
+		clear:both;
+		background:#eee;
+		border-top:4px solid #000;
+		margin:0;
+		padding:6px 15px !important;
+		text-align:right;
+	}
+	/* column container */
+	.colmask {
+		position:relative;	/* This fixes the IE7 overflow hidden bug */
+		clear:both;
+		float:left;
+		width:100%;			/* width of whole page */
+		overflow:hidden;		/* This chops off any overhanging divs */
+	}
+	/* common column settings */
+	.colright,
+	.colmid,
+	.colleft {
+		float:left;
+		width:100%;
+		position:relative;
+	}
+	.col1,
+	.col2,
+	.col3 {
+		float:left;
+		position:relative;
+		padding: 0em 0 .5em 0;
+		overflow:hidden;
+	}
+	/* 2 Column (left menu) settings */
+	.leftmenu {
+		background:#fff;		/* right column background colour */
+				 /* border: 1px solid red; */
+				height: 88%; 
+				width: 100%;
+	}
+	.leftmenu .colleft {
+		right:75%;			/* right column width */
+		background:#f4f4f4;	/* left column background colour */
+				 /* border: 1px solid yellow; */
+				height: 100%; 
+	}
+	.leftmenu .col1 {
+		width: 73%;			/* right column content width */
+		left: 101%;			/* 100% plus left column left padding */
+				 /* border: 1px solid blue; */
+				height: 100%; 
+	}
+	.leftmenu .col2 {
+		width: 24%;			/* left column content width (column width minus left and right padding) */
+		left: 2.5%;			/* (right column left and right padding) plus (left column left padding) */
+	}
+	/* Footer styles */
+	#footer {
+		clear:both;
+		float:left;
+		width:100%;
+		border-top:1px solid #000;
+	}
+	#footer p {
+		padding:10px;
+		margin:0;
+	}
+	/* --> */

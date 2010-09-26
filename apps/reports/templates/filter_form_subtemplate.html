@@ -1,0 +1,96 @@
+{% load i18n %}
+{% if 0 %}
+<script type="text/javascript" src="/site_media/packages/jquery-1.3.2-min.js"></script>
+{% endif %}
+<script type="text/javascript">
+$('#parameters_form').submit(function(e) {
+	var str = $(this).serialize();
+	var chart_path = "/reports/ajax/report/" + $("#current_report").val() + '/';
+	var form_path = "/reports/ajax/filter_form/" + $("#current_report").val() + '/';
+	//var form = $("form:#parameters_form");
+	$.ajax({
+		type: "GET",
+		url: form_path,
+		data: str,
+		success: function(data){
+			$('#parameters_wrapper').empty();
+			$('#parameters_wrapper').html(data);
+			$('.rounded').corners();
+			var validation_error = $(data).find('.errorlist').html();
+			if (!validation_error) {
+				//$("input:submit",form).attr('value', "{% trans 'Please wait...' %}");
+				$('input:submit', "form:#parameters_form").attr("value", "{% trans 'Please wait...' %}");
+				$('input:submit', "form:#parameters_form").attr("disabled", "disabled");
+				$.ajax({
+					type: "GET",
+					url: chart_path,
+					data: str,
+					beforeSend: function(){
+						$("#please-wait").show(); 
+					},
+					dataType: "html",
+					error: function(data) {
+						$('input:submit', "form:#parameters_form").attr("value", "{% trans 'Update' %}");
+						$('input:submit', "form:#parameters_form").removeAttr('disabled'); 
+						$("#please-wait").hide(); 
+					},
+					success: function(data){
+						$('#chart_wrapper').html(data);
+						$('input:submit', "form:#parameters_form").attr("value", "{% trans 'Update' %}");
+						$('input:submit', "form:#parameters_form").removeAttr('disabled'); 
+						$('.rounded').corners();
+						$("#please-wait").hide(); 
+					}
+				});
+			}
+		}
+	});
+	return false;	
+});
+</script>
+
+<style>
+	.data-entry table { width: 100%; } 
+	.data-entry table tbody td { width: 100%; } 
+</style>
+
+<div class="data-entry rounded" style="">
+	<form method="get" action="" id="parameters_form" >
+		<table>
+			<thead>
+				<tr>
+					<td colspan=10 class="rounded">
+						{% trans 'Parameters' %}
+					</td>
+				</tr>
+			</thead>
+			<tfoot>
+				<tr>
+					<td colspan=2 class="rounded" >
+						<input type="submit" value="{% trans 'Please wait...' %}" />
+					</td>
+				</tr>
+			</tfoot>
+			<tbody>
+				{{ filter_form }}
+				<style>
+					#date_helpers {
+						width: 100%;
+						text-align: center;
+					}
+					#date_helpers ul {
+						margin: 1;
+						padding: 0;
+					}
+					#date_helpers li {
+						display: inline;						
+						margin: 0;
+						padding: 0;
+					}
+				</style>
+				<tr><td colspan=2><div id='date_helpers'></div></td></tr>
+				{{ filter_form.media|safe }}
+			</tbody>
+		</table>
+	</form>
+</div>		

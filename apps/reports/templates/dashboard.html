@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block keywords %}
+{% endblock %}
+{% block title %} :: {% trans 'Mi tablero de información' noop %}{% endblock %}
+
+{% block javascript %}
+<link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}packages/jqplot/jquery.jqplot.css" />
+<script language="javascript" type="text/javascript" src="{{ MEDIA_URL }}packages/jqplot/jquery.jqplot.js"></script>
+<script language="javascript" type="text/javascript" src="{{ MEDIA_URL }}packages/jqplot/plugins/jqplot.categoryAxisRenderer.min.js"></script>
+<script language="javascript" type="text/javascript" src="{{ MEDIA_URL }}packages/jqplot/plugins/jqplot.barRenderer.min.js"></script>
+<script type="text/javascript" src="{{ MEDIA_URL }}packages/jqplot/plugins/jqplot.pointLabels.min.js"></script>
+
+<script language="javascript" type="text/javascript" src="{{ MEDIA_URL }}packages/jqplot/plugins/jqplot.pointLabels.min.js" /></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+		$(".chart-widget").resizable({
+			maxHeight: 360,
+			maxWidth: 460,
+			minHeight: 200,
+			minWidth: 200,
+			//grid: 20,
+			//ghost: true,
+			stop: function(event, ui) { $("#chart_2").redraw(); },
+
+		});
+		
+		$(".chart-widget").draggable({
+			containment: '#dashboard-container',
+			scroll: false,
+			handle: 'h3',
+			//grid: [ 20, 20 ],
+		});
+	
+		
+		$(".chart-widget h3").disableSelection();
+
+
+	$("#chart_2").load("/ajax/report/4/");
+	$("#chart_1").load("/ajax/report/5/");
+});
+</script>
+{% endblock %}
+
+
+{% block banner %}{% trans 'Mi tablero de información' noop %}{% endblock %}
+{% block content %}
+
+
+<style type="text/css">
+	.chart-widget { width: 200px; height: 200px; padding: 10px; }
+	.chart-widget h3 { text-align: center; margin: 0; }
+</style>
+
+
+<div id="dashboard-container" style="border: 1px solid red; height: 50em; width: 100%;">
+
+
+<div class="chart-widget ui-widget-content">
+	<h3 class="ui-widget-header" style="cursor: move;">Sample chart 1</h3>
+	<div id="chart_1" style="height:140px; width:180px;">
+	</div>
+</div>
+
+
+<div class="chart-widget ui-widget-content">
+	<h3 class="ui-widget-header" style="cursor: move;">Sample chart 2</h3>
+	<div id="chart_2" style="height:140px; width:180px;">
+	</div>
+</div>
+
+
+</div>
+
+{% endblock %}

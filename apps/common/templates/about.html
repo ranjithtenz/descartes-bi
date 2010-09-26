@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load project_tags %}
+{% block keywords %}
+{% endblock %}
+{% block title %} :: {% trans 'About this program' %}{% endblock %}
+{% block banner %}{% trans 'About this program' %}{% endblock %}
+{% block content %}
+
+<center>
+<img src="{{ MEDIA_URL }}images/about_logo.jpg" alt="about logo" />
+<h1><strong>{% project_name %}</strong></h1>
+<h2><strong>{% trans 'A Web based business intelligence software' %}</strong></h2><br /></br />
+<h2>{% trans 'By' %}:<br />
+Roberto Rosario<br />
+roberto.rosario.gonzalez@gmail.com<br /></h2>
+<a href="http://code.google.com/p/descartes-bi/">http://code.google.com/p/descartes-bi/</a><br />
+{% trans 'Released under the GPL V3' %}<br /><br />
+{% trans 'Revision' %}: {{ revision }}
+</center>
+
+{% endblock %}

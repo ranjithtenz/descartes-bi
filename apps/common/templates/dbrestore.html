@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% block keywords %}
+{% endblock %}
+{% block title %} :: {% trans 'Restore' %}{% endblock %}
+{% block banner %}{% trans 'Restore' %}{% endblock %}
+{% block content %}
+
+{% if error_title %}
+	{% with error_title as title %}
+	{% with error_message as message %}
+	{% include "messagebox-error.html" %}
+	{% endwith %}
+	{% endwith %}
+{% endif %}
+
+<center>
+  <div class="content">
+    <h1>{% trans 'Restore database' %}</h1>
+    <div class="body">
+      <p>
+        <form action="." method="post"
+              enctype="multipart/form-data">
+          <table>
+            {{ form }}
+          </table>
+          <input type="submit" value="{% trans 'Submit' %}" />
+        </form>
+      </p><br />
+      <p>{% trans "Once the upload starts don't close this window or interrupt the process in anyway." %}</p>
+    </div>
+  </div>
+</center>
+
+
+{% endblock %}

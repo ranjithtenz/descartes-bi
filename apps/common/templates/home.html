@@ -1,0 +1,21 @@
+﻿{% extends "base.html" %}
+{% load i18n %}
+{% block keywords %}
+	<meta name="description" content="" />
+	<meta name="keywords" content="" />
+{% endblock %}
+{% block banner %}{% trans 'Home' %}{% endblock %}
+{% block javascript %}
+<script type="text/javascript">
+$(document).ready(function() {
+});
+</script>
+{% endblock %}
+
+
+{% block content %}
+<center><img src="{{ MEDIA_URL }}images/project_logo.png" alt="project logo" /></center>
+
+{% endblock %}
+
+{% block footer %}{% endblock %}

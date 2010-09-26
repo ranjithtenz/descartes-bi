@@ -1,0 +1,248 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-05-29 11:45-0400\n"
+"PO-Revision-Date: 2010-05-29 11:47\n"
+"Last-Translator: <admin@admin.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Translated-Using: django-rosetta 0.4.7\n"
+
+#: templates/500.html:6 templates/500.html.py:7 templates/500.html.py:11
+msgid "ERROR 500"
+msgstr "ERROR 500"
+
+#: templates/500.html:13
+#, python-format
+msgid "Oops, it seems you did something that %(project_name)s did not expected."
+msgstr "Vaya, parece que hizo algo que %(project_name)s  no se esperaba."
+
+#: templates/500.html:14
+msgid "Please contact the system administrator for further assitance."
+msgstr "Póngase en contacto con el administrador del sistema para asistencia adicional."
+
+#: templates/about.html:6 templates/about.html.py:7
+msgid "About this program"
+msgstr "Acerca de este programa"
+
+#: templates/about.html:13
+msgid "A Web based business intelligence software"
+msgstr "Un programa por web de inteligencia de negocios"
+
+#: templates/about.html:14
+msgid "By"
+msgstr "Por"
+
+#: templates/about.html:19
+msgid "Revision"
+msgstr "Revisión"
+
+#: templates/base.html:133 templates/base.html.py:146
+msgid "The selected report is being processed, please wait."
+msgstr "El informe seleccionado está siendo procesada, por favor espere."
+
+#: templates/base.html:152
+msgid "Description"
+msgstr "Descripción"
+
+#: templates/base.html:153
+msgid "Validation"
+msgstr "Validación"
+
+#: templates/base.html:155
+msgid "Benchmarks"
+msgstr "Puntos de referencia"
+
+#: templates/base.html:160
+msgid "Generate results"
+msgstr "Generar resultados"
+
+#: templates/base.html:188
+msgid "Logout from aplication?"
+msgstr "¿Salir de la aplicación?"
+
+#: templates/base.html:190
+msgid "Logout"
+msgstr "Salir"
+
+#: templates/base.html:203
+msgid "User information"
+msgstr "Información del usuario"
+
+#: templates/base.html:205 templates/base.html.py:221
+msgid "Authorized access is required"
+msgstr "El acceso autorizado es requierido"
+
+#: templates/base.html:206 templates/base.html.py:222
+msgid "If you don't have an account, contact your system administrator so that one may be created for you."
+msgstr "Si no tienes una cuenta, póngase en contacto con el administrador del sistema, de modo que una pueda ser creada para usted."
+
+#: templates/base.html:208
+msgid "User fullname"
+msgstr "Nombre completo del usuario"
+
+#: templates/base.html:209
+msgid "Last login"
+msgstr "Última entrada"
+
+#: templates/base.html:212 templates/base.html.py:228
+msgid "Language"
+msgstr "Idioma"
+
+#: templates/base.html:220
+msgid "Welcome"
+msgstr "Bienvenido"
+
+#: templates/base.html:231 templates/base.html.py:235
+msgid "English"
+msgstr "Inglés"
+
+#: templates/base.html:232 templates/base.html.py:234
+msgid "Spanish"
+msgstr "Español"
+
+#: templates/base.html:249 templates/login.html:41
+msgid "User"
+msgstr "Usuario"
+
+#: templates/base.html:251
+msgid "Anonymous"
+msgstr "Anónimo"
+
+#: templates/base.html:261
+msgid "Open panel"
+msgstr "Abrir panel"
+
+#: templates/base.html:262
+msgid "Close panel"
+msgstr "Cerrar panel"
+
+#: templates/base.html:287
+msgid "Loading"
+msgstr "Cargando"
+
+#: templates/base.html:298 templates/home.html:7
+msgid "Home"
+msgstr "Inicio"
+
+#: templates/base.html:300
+msgid "Main page"
+msgstr "Página principal"
+
+#: templates/base.html:301
+msgid "My user panel"
+msgstr "Mi panel de usuario"
+
+#: templates/base.html:302 templates/base.html.py:331
+msgid "About"
+msgstr "Acerca"
+
+#: templates/base.html:320
+msgid "Configuration"
+msgstr "Configuración"
+
+#: templates/base.html:322
+msgid "Administration"
+msgstr "Administración"
+
+#: templates/base.html:323
+msgid "Create backup copy"
+msgstr "Crear copia de seguridad"
+
+#: templates/base.html:324
+msgid "Restore backup copy"
+msgstr "Restaurar copia de seguridad"
+
+#: templates/base.html:329
+msgid "ARPE"
+msgstr "ARPE"
+
+#: templates/base.html:339
+msgid "Data statistics"
+msgstr "Estadísticas de los datos"
+
+#: templates/base.html:357
+msgid "This software uses a technology known as Javascript, make sure that your browser supports it, and that it is properly enabled."
+msgstr "Este programa utiliza una tecnología conocida como JavaScript, asegúrese de que su navegador la apoya, y que está debidamente habilitada."
+
+#: templates/base.html:366
+msgid "Ok"
+msgstr "Ok"
+
+#: templates/dbrestore.html:5 templates/dbrestore.html.py:6
+msgid "Restore"
+msgstr "Restaurar"
+
+#: templates/dbrestore.html:19 templates/dbrestore.html.py:37
+#: templates/dbrestore.html:46
+msgid "Restore database"
+msgstr "Restaurar base de datos"
+
+#: templates/dbrestore.html:27 templates/dbrestore.html.py:40
+msgid "Submit"
+msgstr "Enviar"
+
+#: templates/dbrestore.html:30
+msgid "Once the upload starts don't close this window or interrupt the process in anyway."
+msgstr "Una vez que se inicia el upload no cierre esta ventana o interrumpa el proceso de ninguna manera."
+
+#: templates/home.html:14
+msgid "Your product license has expired, contact your system administrator for further details. "
+msgstr "Su licencia para el producto ha caducado, póngase en contacto con el administrador del sistema para más detalles."
+
+#: templates/home.html:16
+#, python-format
+msgid "Your current license expires in %(remaining)s days.  Please renew it to avoid service interruption. "
+msgstr "Su licencia actual vence en %(remaining)s  días. Por favor, renuevela para evitar interrupción de servicio."
+
+#: templates/login.html:14
+msgid "The operation could not be performed because one or more error(s) occurred."
+msgstr "La operación no pudo realizarse, debido a que uno o más de error (s) ocurrió."
+
+#: templates/login.html:15
+msgid "Please resubmit the form after making the following changes:"
+msgstr "Por favor, vuelva a enviar el formulario después de hacer los siguientes cambios:"
+
+#: templates/login.html:40
+msgid "Login information"
+msgstr "Informacion de entrada"
+
+#: templates/login.html:44
+msgid "Password"
+msgstr "Contraseña"
+
+#: templates/login.html:48
+msgid "Login"
+msgstr "Entrar"
+
+#: templates/login.html:49
+msgid "Forgot your password?"
+msgstr "¿Olvidaste tu contraseña?"
+
+#: templates/password_change_form.html:17
+msgid "Change password"
+msgstr "Cambiar contraseña"
+
+#: templates/password_change_form.html:18
+msgid "Previous password"
+msgstr "Contraseña anterior"
+
+#: templates/password_change_form.html:20
+msgid "New password"
+msgstr "Nueva contraseña"
+
+#: templates/password_change_form.html:22
+msgid "Confirm new password"
+msgstr "Confirmar nueva contraseña"
+
+#: templates/password_change_form.html:26
+msgid "Change"
+msgstr "Cambiar"

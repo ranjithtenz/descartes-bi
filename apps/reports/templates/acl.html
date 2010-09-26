@@ -1,0 +1,47 @@
+﻿{% extends "base.html" %}
+{% load i18n %}
+{% block content %}
+
+<script>
+//	$(function() {
+	$(document).ready(function() {		
+		
+		$.getJSON("/ajax/get_model/User/", function(data){
+			$.each(data, function() {
+				alert(this);
+			//alert(data.length);
+			//$.each(data.items, function(i,item){
+				//$("<img/>").attr("src", item.media.m).appendTo("#images");
+				//alert(item);
+				//if ( i == 3 ) return false;
+
+				
+			});
+		});
+	});
+</script>
+<div class="data-entry rounded" style="">
+	<form method="get" action="" id="aclform" >
+		<table>
+			<thead>
+				<tr>
+					<td colspan=10 class="rounded">
+						{% trans 'Access control' noop %}
+					</td>
+				</tr>
+			</thead>
+			<tfoot>
+				<tr>
+					<td colspan=2 class="rounded" >
+						<input type="submit" value="{% trans 'Update' %}" />
+					</td>
+				</tr>
+			</tfoot>
+			<tbody>
+				{{ aclform }}
+				{{ aclform.media|safe }}
+			</tbody>
+		</table>
+	</form>
+</div>	
+{% endblock %}

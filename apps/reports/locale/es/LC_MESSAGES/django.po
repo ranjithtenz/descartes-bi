@@ -1,0 +1,574 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-10-30 00:18-0400\n"
+"PO-Revision-Date: 2010-03-16 08:15\n"
+"Last-Translator: <admin@admin.com>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Translated-Using: django-rosetta 0.4.7\n"
+
+#: admin.py:17
+msgid "copy"
+msgstr ""
+
+#: admin.py:124
+msgid "Validation"
+msgstr "Validación"
+
+#: admin.py:140
+msgid "1 series was"
+msgstr "1 serie fue"
+
+#: admin.py:142
+#, python-format
+msgid "%s series were"
+msgstr "%s series fueron"
+
+#: admin.py:143 admin.py:174
+#, python-format
+msgid "%s copied."
+msgstr ""
+
+#: admin.py:145 admin.py:176
+msgid "Copy the selected object"
+msgstr ""
+
+#: admin.py:171
+msgid "1 report was"
+msgstr "1 informe fue"
+
+#: admin.py:173
+#, python-format
+msgid "%s reports were"
+msgstr "%s informes fueron"
+
+#: forms.py:36
+msgid "January"
+msgstr "Enero"
+
+#: forms.py:36
+msgid "February"
+msgstr "Febrero"
+
+#: forms.py:36
+msgid "March"
+msgstr "Marzo"
+
+#: forms.py:36
+msgid "April"
+msgstr "Abril"
+
+#: forms.py:36
+msgid "May"
+msgstr "Mayo"
+
+#: forms.py:36
+msgid "June"
+msgstr "Junio"
+
+#: forms.py:36
+msgid "July"
+msgstr "Julio"
+
+#: forms.py:36
+msgid "August"
+msgstr "Agosto"
+
+#: forms.py:36
+msgid "September"
+msgstr "Septiembre"
+
+#: forms.py:36
+msgid "October"
+msgstr "Octubre"
+
+#: forms.py:36
+msgid "November"
+msgstr "Noviembre"
+
+#: forms.py:36
+msgid "December"
+msgstr "Diciembre"
+
+#: forms.py:38
+msgid "Format"
+msgstr "Formato"
+
+#: forms.py:38
+msgid "Chart"
+msgstr "Gráfica"
+
+#: forms.py:38
+msgid "Table"
+msgstr "Tabla"
+
+#: models.py:51
+msgid "Date field"
+msgstr "Campo de fecha"
+
+#: models.py:52
+msgid "Simple drop down"
+msgstr "Desplegables sencillo"
+
+#: models.py:61
+msgid "Name of the parameter to be used in the queries.  Do not use spaces or special symbols."
+msgstr "Nombre del parámetro que se utilizará en las consultas. No utilice espacios ni símbolos especiales."
+
+#: models.py:61 models.py:95 models.py:124
+msgid "name"
+msgstr "nombre"
+
+#: models.py:62 models.py:128 models.py:205
+msgid "description"
+msgstr "descripción"
+
+#: models.py:63 models.py:206 models.py:276
+msgid "type"
+msgstr "tipo"
+
+#: models.py:64 models.py:125
+msgid "label"
+msgstr "etiqueta"
+
+#: models.py:65 models.py:332 models.py:362
+msgid "default"
+msgstr "predeterminado"
+
+#: models.py:66 models.py:331 models.py:361
+msgid "options"
+msgstr "opciones"
+
+#: models.py:76
+msgid "used by filter sets"
+msgstr "utilizados por juegos de filtros"
+
+#: models.py:91 models.py:113 models.py:120 models.py:330 models.py:360
+msgid "filter"
+msgstr "filtro"
+
+#: models.py:92 models.py:96 models.py:121 models.py:163 models.py:315
+#: models.py:345
+msgid "filters"
+msgstr "filtros"
+
+#: models.py:95
+msgid "A simple name for your convenience."
+msgstr "Un nombre sencillo para su conveniencia."
+
+#: models.py:104 models.py:144
+msgid "used by reports"
+msgstr "utilizados por los informes"
+
+#: models.py:108
+msgid "filters set"
+msgstr "juego de  filtros"
+
+#: models.py:109
+msgid "filters sets"
+msgstr "juegos de filtros"
+
+#: models.py:114 models.py:291
+msgid "order"
+msgstr "orden"
+
+#: models.py:126
+msgid "tick format"
+msgstr "formato de escala"
+
+#: models.py:127
+msgid "query"
+msgstr "consulta"
+
+#: models.py:127
+msgid "SQL query, that returns only 2 fields and may of may be a parameter query.  Include parameters in the format: <field> LIKE %(parameter)s.  Also the SQL wildcard character % must be escaped as %%."
+msgstr "Consulta SQL, que devuelve sólo 2 de campos y puede ser una consulta de parámetros. Incluir parámetros en el formato: <campo> LIKE %(parámetro)s . Asimismo, el carácter comodín % SQL debe ser escapado de forma %%."
+
+#: models.py:130
+msgid "validated?"
+msgstr "¿validado?"
+
+#: models.py:131
+msgid "validation date"
+msgstr "Fecha de validación"
+
+#: models.py:132
+msgid "validated by"
+msgstr "validado por"
+
+#: models.py:133
+msgid "validation description"
+msgstr "descripción de la validación"
+
+#: models.py:133
+msgid "An explanation or description about how this series was validated."
+msgstr "Una explicación o descripción de como esta serie fue validada."
+
+#: models.py:149
+msgid "parameters"
+msgstr "parámetros"
+
+#: models.py:167 models.py:172 models.py:274 models.py:284
+msgid "serie"
+msgstr "serie"
+
+#: models.py:168 models.py:219 models.py:248 models.py:285
+msgid "series"
+msgstr "series"
+
+#: models.py:171 models.py:256
+msgid "timestamp"
+msgstr "estampado de tiempo"
+
+#: models.py:173 models.py:258
+msgid "user"
+msgstr "usuario"
+
+#: models.py:174 models.py:259
+msgid "execution time"
+msgstr "tiempo de ejecución"
+
+#: models.py:181
+msgid "series statistic"
+msgstr "estadística de la serie"
+
+#: models.py:182
+msgid "series statistics"
+msgstr "estadísticas de las series"
+
+#: models.py:186
+msgid "Standard X,Y"
+msgstr "Estándar X, Y"
+
+#: models.py:187
+msgid "Pie chart"
+msgstr "Gráfica circular"
+
+#: models.py:190
+msgid "North-West"
+msgstr "Norte-Oeste"
+
+#: models.py:191
+msgid "North"
+msgstr "Norte"
+
+#: models.py:192
+msgid "North-East"
+msgstr "Nordeste"
+
+#: models.py:193
+msgid "East"
+msgstr "Este"
+
+#: models.py:194
+msgid "South-East"
+msgstr "Sudeste"
+
+#: models.py:195
+msgid "South"
+msgstr "Sur"
+
+#: models.py:196
+msgid "South-West"
+msgstr "Sur-Oeste"
+
+#: models.py:197
+msgid "West"
+msgstr "Oeste"
+
+#: models.py:200
+msgid "Horizontal"
+msgstr "Horizontal"
+
+#: models.py:201
+msgid "Vertical"
+msgstr "Vertical"
+
+#: models.py:204
+msgid "Chart title."
+msgstr "Título del gráfico."
+
+#: models.py:204 models.py:289
+msgid "title"
+msgstr "título"
+
+#: models.py:205
+msgid "A description of the report.  This description will also be presented to the user."
+msgstr "Una descripción del informe. Esta descripción también se presentará al usuario."
+
+#: models.py:206
+msgid "Chart type."
+msgstr "Tipo de gráfico."
+
+#: models.py:207
+msgid "zoom"
+msgstr "acercamiento"
+
+#: models.py:207
+msgid "Allow the user to zoom in on the chart."
+msgstr "Permiten al usuario hacer zoom en el gráfico."
+
+#: models.py:208
+msgid "point labels"
+msgstr "etiquetas de los puntos"
+
+#: models.py:208
+msgid "Enable point labels displaying the values."
+msgstr "Habilitar etiquetas de los puntos que muestra los valores."
+
+#: models.py:209
+msgid "point label location"
+msgstr "ubicación de etiqueta de punto"
+
+#: models.py:209
+msgid "The point label position respetive to the series."
+msgstr "La posición de etiqueta de punto respetivo a la serie."
+
+#: models.py:210
+msgid "Show a trendline?"
+msgstr "Mostrar una línea de tendencia?"
+
+#: models.py:210
+msgid "trendline"
+msgstr "línea de tendencia"
+
+#: models.py:211
+msgid "highlighter"
+msgstr "resaltador"
+
+#: models.py:212
+msgid "This options forces all series in chart to use the same scale."
+msgstr "Esta opción fuerza a todas las series en el gráfico a utilizar la misma escala."
+
+#: models.py:212
+msgid "use one scale"
+msgstr "usar una escala"
+
+#: models.py:213
+msgid "The scale label to be used when using a single scale per report."
+msgstr "La etiqueta de escala que se utiliza cuando se utiliza una única escala por informe."
+
+#: models.py:213
+msgid "scale label override"
+msgstr "reemplazar la etiqueta de escala"
+
+#: models.py:214
+msgid "Draw horizontal and/or vertical tracking lines across the plot to the cursor location."
+msgstr "Dibuja lineas de seguimiento horizontal y / o verticales en toda la gráfica para la ubicación del cursor."
+
+#: models.py:214
+msgid "data tracking"
+msgstr "seguimiento de datos"
+
+#: models.py:215
+msgid "Show legend?"
+msgstr "Mostrar leyenda?"
+
+#: models.py:215
+msgid "legend"
+msgstr "leyenda"
+
+#: models.py:216
+msgid "legend location"
+msgstr "ubicación de la leyenda"
+
+#: models.py:216
+msgid "Select the legend position respetive to the chart."
+msgstr "Seleccione la posición de la leyenda respetive a la gráfico."
+
+#: models.py:217
+msgid "report orientation"
+msgstr "orientación del informe"
+
+#: models.py:217
+msgid "Direction the report's series will be drawn."
+msgstr ""
+
+#: models.py:218
+msgid "filter sets"
+msgstr "juegos de filtros"
+
+#: models.py:244
+msgid "used by menus"
+msgstr "utilizados por los menús"
+
+#: models.py:252 models.py:257
+msgid "report"
+msgstr "informe"
+
+#: models.py:253 models.py:344
+msgid "reports"
+msgstr "informes"
+
+#: models.py:266
+msgid "report statistic"
+msgstr "estadísticas de informe"
+
+#: models.py:267
+msgid "report statistics"
+msgstr "estadísticas de los informes"
+
+#: models.py:271
+msgid "Bars"
+msgstr "Barras"
+
+#: models.py:272
+msgid "Lines"
+msgstr "Líneas"
+
+#: models.py:275 models.py:290
+msgid "chart"
+msgstr "gráfica"
+
+#: models.py:277
+msgid "zerobase"
+msgstr "base de cero"
+
+#: models.py:277
+msgid "Force this serie's scale to start at integer number 0."
+msgstr "Fuerza la escala de esta serie a iniciar en el número entero de 0."
+
+#: models.py:298
+msgid "menu item"
+msgstr "elemento de menú"
+
+#: models.py:299
+msgid "menu items"
+msgstr "los elementos de menú"
+
+#: models.py:303 models.py:314 models.py:319 models.py:356
+msgid "charts"
+msgstr "gráficas"
+
+#: models.py:307
+msgid "Exclusive"
+msgstr "Exclusivo"
+
+#: models.py:308
+msgid "Inclusive"
+msgstr "Inclusivo"
+
+#: models.py:309
+msgid "Override"
+msgstr "Reemplace"
+
+#: models.py:313
+msgid "Group/user permissions union type"
+msgstr "Tipo de union de permios Grupo/Usuario"
+
+#: models.py:313
+msgid "Determines how the user permissions interact with the group permissions of this user."
+msgstr "Determina cómo los permisos de usuario interactuan con los permisos de grupo de este usuario."
+
+#: models.py:325
+msgid "user permission"
+msgstr "permisos de usuario"
+
+#: models.py:326 models.py:329
+msgid "user permissions"
+msgstr "permisos de los usuarios"
+
+#: models.py:338
+msgid "user filter values limit"
+msgstr "valores límite de filtro de usuario"
+
+#: models.py:339
+msgid "user filter values limits"
+msgstr "valores límite de los filtros de usuario"
+
+#: models.py:342
+msgid "group"
+msgstr "grupo"
+
+#: models.py:351 models.py:359
+msgid "group permissions"
+msgstr "permisos de grupo"
+
+#: models.py:352
+msgid "groups permissions"
+msgstr "permisos de los grupos"
+
+#: models.py:368
+msgid "group filter values limit"
+msgstr "valores límite de filtro de grupo"
+
+#: models.py:369
+msgid "group filter values limits"
+msgstr "valores límite de los filtros de grupo"
+
+#: views.py:79
+#, python-format
+msgid "\"%(serie)s\" = Lastest run: %(last)ss; Average: %(avg)ss"
+msgstr "\"%(serie)s\" = Ultima corrida: %(last)ss; Promedio: %(avg)ss"
+
+#: views.py:102 views.py:155
+msgid "Permission error"
+msgstr "Error de permisos"
+
+#: views.py:102 views.py:155
+msgid "Insufficient permissions to access this area."
+msgstr "Permisos insuficientes para acceder a esta área."
+
+#: views.py:139
+msgid "No element of this report has been validates."
+msgstr "Ningún elemento de este informe ha sido valido."
+
+#: views.py:197
+msgid "Query error"
+msgstr "De error de consulta"
+
+#: views.py:197
+msgid "Single '%' found, replace with double '%%' to properly escape the SQL wildcard caracter '%'."
+msgstr "'%' sencillo encontrado, reemplazar con doble '%%' para adecuadamente escapar '%' el caracter comodín SQL."
+
+#: views.py:266
+msgid "Error"
+msgstr "Error"
+
+#: views.py:266
+msgid "Unknown output type (chart, table, etc)."
+msgstr "Tipo de salida desconocido (gráfico, tabla, etc.)"
+
+#: templates/acl.html:54
+msgid "Access control"
+msgstr "Control de acceso"
+
+#: templates/acl.html:61 templates/filter_form_subtemplate.html:34
+#: templates/filter_form_subtemplate.html:40
+msgid "Update"
+msgstr "Actualizar"
+
+#: templates/dashboard.html:5 templates/dashboard.html.py:47
+msgid "Mi tablero de información"
+msgstr ""
+
+#: templates/filter_form_subtemplate.html:22
+#: templates/filter_form_subtemplate.html:23
+#: templates/filter_form_subtemplate.html:71
+msgid "Please wait..."
+msgstr "Por favor, espere ..."
+
+#: templates/filter_form_subtemplate.html:64
+msgid "Parameters"
+msgstr "Parámetros"
+
+#: templates/single_chart.html:168
+#, python-format
+msgid "Calculated in: %(seconds)s.%(microseconds)s seconds."
+msgstr "Calculado en: %(seconds)s.%(microseconds)s segundos."
+
+#: templates/single_grid.html:48
+msgid "Serie"
+msgstr "Partida"
+
+#: templates/single_grid.html:48
+msgid "Value"
+msgstr "Valor"
