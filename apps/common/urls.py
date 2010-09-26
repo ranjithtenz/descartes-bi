@@ -24,3 +24,4 @@ urlpatterns = patterns('common.views',
 	url(r'^about/$', 'about', (), 'about_view'),
 	url(r'^backup/$', 'dbbackup', (), 'backup_view'),
 	url(r'^restore/$', 'dbrestore', (), 'restore_view'),
+)

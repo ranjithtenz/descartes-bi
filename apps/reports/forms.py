@@ -18,8 +18,7 @@
 
 from django import forms
 from django.utils.translation import ugettext_lazy as _
-
-from models.import FILTER_TYPE_DATE, FILTER_TYPE_COMBO, FILTER_TYPE_MONTH
+from models import FILTER_TYPE_DATE, FILTER_TYPE_COMBO, FILTER_TYPE_MONTH
 
 class FilterForm(forms.Form):
 	def __init__(self, filtersets, user, *args, **kwargs):

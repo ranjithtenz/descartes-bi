@@ -268,7 +268,7 @@ def data_to_js_chart(data, label_format = None, orientation = 'v'):
 	else:
 		for key,value in data:
 			try:
-				# unicode(key.decode("utf-8")) Needed to handle ñ in mayaguez casos reg per empl
+				# unicode(key.decode("utf-8")) Needed to handle non ascii
 				result += '[%s,"%s","%s"],' % (value, unicode(key.decode("utf-8")) or u'?', unicode(value))  
 			except:
 				#However fails with long integer
