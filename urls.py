@@ -73,7 +73,7 @@ urlpatterns = patterns('',
     url(r'^myaccount/password_change/$', 'django.contrib.auth.views.password_change', {'template_name': 'password_change_form.html'}, name='my_password_change'),
     url(r'^accounts/password_change_ok/$', 'django.contrib.auth.views.password_change_done', {'template_name': 'password_change_done.html'}),
     
-    (r'^favicon\.ico$', 'django.views.generic.simple.redirect_to', {'url': '%s/images/favicon.ico' % settings.MEDIA_URL}),
+    (r'^favicon\.ico$', 'django.views.generic.simple.redirect_to', {'url': '%simages/favicon.ico' % settings.MEDIA_URL}),
 )
 
 for capp in getattr(settings, 'CUSTOMIZATION_APPS', []):
