@@ -7,12 +7,13 @@ DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 DEBUG_APPS_DJANGO_EXTENSIONS = False
 DEVELOPMENT = False
-SERVE_STATIC_CONTENT = True
+SERVE_STATIC_CONTENT = False
 
 import os
 PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "./"))
 
 import sys 
+sys.path.append(os.path.join(PROJECT_ROOT, 'modules'))
 sys.path.append(os.path.join(PROJECT_ROOT, 'apps'))
 sys.path.append(os.path.join(PROJECT_ROOT, 'customization_apps'))
 sys.path.append(os.path.join(PROJECT_ROOT, 'shared_apps'))
@@ -117,6 +118,7 @@ INSTALLED_APPS = (
 	'grappelli',
 	'common',
 	'django.contrib.humanize',
+    'tornado_app',
 )
 
 CUSTOMIZATION_APPS = ()
