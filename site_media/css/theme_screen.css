@@ -37,7 +37,7 @@ a:hover { color:#ffe761; }
 
 .error-message { font-size: 150%; font-weight: bold; text-align: center; }
 
-.errorlist li { font-size:12px !important; display:block; padding:4px 5px 4px 25px; margin:0 0 3px 0; border:1px solid red; color:white; background:red url(/site_media/images/icon_alert.gif) 5px .3em no-repeat; }
+.errorlist li { font-size:12px !important; display:block; padding:4px 5px 4px 25px; margin:0 0 3px 0; border:1px solid red; color:white; background:red url(../images/icon_alert.gif) 5px .3em no-repeat; }
 ul.errorlist { margin:0 !important; padding:0 !important; }
 td ul.errorlist { margin:0 !important; padding:0 !important; }
 td ul.errorlist li { margin:0 !important; }
@@ -63,11 +63,11 @@ h3 { font-size:170%; font-weight:bold; margin-bottom: 1em; text-align: center; l
 	text-align:center;
 	height:80%;
 	width:100%;
-	background: url(/site_media/images/circle-thickbox.gif) no-repeat center center;
+	background: url(../images/circle-thickbox.gif) no-repeat center center;
 }
 
-.loading_circle { background: url(/site_media/images/loading-big.gif)  center center no-repeat; border: 1px solid blue; z-index: 99; }
-.loading_bar { background: url(/site_media/images/loading-bar.gif)  center center no-repeat; border: 1px solid blue; z-index: 99; }
+.loading_circle { background: url(../images/loading-big.gif)  center center no-repeat; border: 1px solid blue; z-index: 99; }
+.loading_bar { background: url(../images/loading-bar.gif)  center center no-repeat; border: 1px solid blue; z-index: 99; }
 
 body > div#loading {
   /* used by Opera 5+, Netscape6+/Mozilla, Konqueror, Safari, OmniWeb 4.5+, iCab, ICEbrowser */
