@@ -26,148 +26,156 @@ from django.conf import settings
 from django.template import loader, RequestContext
 from django import http
 
-def error500(request, template_name = '500.html'):
-	#TODO: if user is admin include debug info
-	t = loader.get_template(template_name)
 
-	return http.HttpResponseServerError(t.render(RequestContext(request, {
-		'project_name' : settings.PROJECT_TITLE })))
+def error500(request, template_name = '500.html'):
+    #TODO: if user is admin include debug info
+    t = loader.get_template(template_name)
+
+    return http.HttpResponseServerError(t.render(RequestContext(request, {
+        'project_name' : settings.PROJECT_TITLE })))
+
 
 def get_svn_revision(path=None):
-	import os, re
-	rev = None
-	entries_path = '%s/.svn/entries' % path
+    import os, re
+    rev = None
+    entries_path = '%s/.svn/entries' % path
 
-	if os.path.exists(entries_path):
-		entries = open(entries_path, 'r').read()
-		# Versions >= 7 of the entries file are flat text.  The first line is
-		# the version number. The next set of digits after 'dir' is the revision.
-		if re.match('(\d+)', entries):
-			rev_match = re.search('\d+\s+dir\s+(\d+)', entries)
-			if rev_match:
-				rev = rev_match.groups()[0]
-		# Older XML versions of the file specify revision as an attribute of
-		# the first entries node.
-		else:
-			from xml.dom import minidom
-			dom = minidom.parse(entries_path)
-			rev = dom.getElementsByTagName('entry')[0].getAttribute('revision')
+    if os.path.exists(entries_path):
+        entries = open(entries_path, 'r').read()
+        # Versions >= 7 of the entries file are flat text.  The first line is
+        # the version number. The next set of digits after 'dir' is the revision.
+        if re.match('(\d+)', entries):
+            rev_match = re.search('\d+\s+dir\s+(\d+)', entries)
+            if rev_match:
+                rev = rev_match.groups()[0]
+        # Older XML versions of the file specify revision as an attribute of
+        # the first entries node.
+        else:
+            from xml.dom import minidom
+            dom = minidom.parse(entries_path)
+            rev = dom.getElementsByTagName('entry')[0].getAttribute('revision')
 
-	if rev:
-		return u'svn-r%s' % rev
-	return u'svn-unknown'
-	
+    if rev:
+        return u'svn-r%s' % rev
+    return u'svn-unknown'
+
+    
 def set_language(request):
-	if request.method == "GET":
-		request.session['django_language'] = request.GET.get('language', 'en')
+    if request.method == "GET":
+        request.session['django_language'] = request.GET.get('language', 'en')
 
-	return HttpResponseRedirect(request.META.get('HTTP_REFERER','/'))
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER','/'))
+
 
 def home(request):
-	return render_to_response('home.html', {},
-		context_instance=RequestContext(request))		
+    return render_to_response('home.html', {},
+        context_instance=RequestContext(request))
+
 
 def about(request):
-	import settings
-	
-	return render_to_response('about.html', { 'revision' : get_svn_revision(settings.PROJECT_ROOT ) },
-		context_instance=RequestContext(request))	
-		
+    import settings
+
+    return render_to_response('about.html', { 'revision' : get_svn_revision(settings.PROJECT_ROOT ) },
+        context_instance=RequestContext(request))
+
+
 def get_project_root():
-	from django.conf import settings
-	import os
-	""" get the project root directory """
-	settings_mod = __import__(settings.SETTINGS_MODULE, {}, {}, [''])
-	return os.path.dirname(os.path.abspath(settings_mod.__file__))	
+    from django.conf import settings
+    import os
+    """ get the project root directory """
+    settings_mod = __import__(settings.SETTINGS_MODULE, {}, {}, [''])
+    return os.path.dirname(os.path.abspath(settings_mod.__file__))
+
 
 @login_required
 def dbbackup(request):
-#	from django_extensions.management.commands import dumpscript
-	import os
-	import datetime
+#   from django_extensions.management.commands import dumpscript
+    import os
+    import datetime
 
-	from django.core.servers.basehttp import FileWrapper
-	from django.conf import settings
-	from django.core.files import File
+    from django.core.servers.basehttp import FileWrapper
+    from django.conf import settings
+    from django.core.files import File
 
-	import tempfile
-	import dumpscript	
-	
-	ct = datetime.datetime.now()
-	
-	if not (request.user.is_authenticated() and request.user.is_staff):
-		raise http.Http404
-	
-	models = dumpscript.get_models(['reports','replicate','auth'])
+    import tempfile
+    import dumpscript
 
-	context = {}
-	
-	filename = "%s-backup-%s.py" % (settings.PROJECT_TITLE, ct.strftime("%Y-%m-%d"))
-	filepath = "/tmp/%s" % filename
-	f = open(filepath, 'w')
-	f.write(unicode(dumpscript.Script(models=models, context=context)))
-	f.close()
+    ct = datetime.datetime.now()
 
-	f = open(filepath, 'r')
-	response = HttpResponse(FileWrapper(File(f)))
-	response['Content-Disposition'] = 'attachment; filename=%s' % filename
-	response['Content-Length'] = os.path.getsize(filepath)
-	return response
+    if not (request.user.is_authenticated() and request.user.is_staff):
+        raise http.Http404
+
+    models = dumpscript.get_models(['reports','replicate','auth'])
+
+    context = {}
+
+    filename = "%s-backup-%s.py" % (settings.PROJECT_TITLE, ct.strftime("%Y-%m-%d"))
+    filepath = "/tmp/%s" % filename
+    f = open(filepath, 'w')
+    f.write(unicode(dumpscript.Script(models=models, context=context)))
+    f.close()
+
+    f = open(filepath, 'r')
+    response = HttpResponse(FileWrapper(File(f)))
+    response['Content-Disposition'] = 'attachment; filename=%s' % filename
+    response['Content-Length'] = os.path.getsize(filepath)
+    return response
+
 
 @login_required
 def dbrestore(request):
-	from forms import UploadFileForm
-	error_message = ''
-	error_title = ''
-	if request.method == 'POST':
-		form = UploadFileForm(request.POST, request.FILES)
-		if form.is_valid():
-			try: 
-				_handle_restore_file(request.FILES['file'])
-				return HttpResponseRedirect('/')
-			except:
-				import sys
-				(exc_type, exc_info, tb) = sys.exc_info()
-				error_title = exc_type
-				error_message = exc_info
+    from forms import UploadFileForm
+    error_message = ''
+    error_title = ''
+    if request.method == 'POST':
+        form = UploadFileForm(request.POST, request.FILES)
+        if form.is_valid():
+            try:
+                _handle_restore_file(request.FILES['file'])
+                return HttpResponseRedirect('/')
+            except:
+                import sys
+                (exc_type, exc_info, tb) = sys.exc_info()
+                error_title = exc_type
+                error_message = exc_info
 
-	else:
-		form = UploadFileForm()
-	return render_to_response('dbrestore.html', {
-		'form': form,
-		'error_title' : error_title,
-		'error_message' : error_message
-		}, context_instance=RequestContext(request))	
+    else:
+        form = UploadFileForm()
+    return render_to_response('dbrestore.html', {
+        'form': form,
+        'error_title' : error_title,
+        'error_message' : error_message
+        }, context_instance=RequestContext(request))
+
 
 def _handle_restore_file(uploaded_file):
-	import sys
-	import os.path
-	from django.core.management.commands import reset
-	import runscript
+    import sys
+    import os.path
+    from django.core.management.commands import reset
+    import runscript
 
-	#Turn into a real file
-	dest_path = "%s/scripts/%s" % (get_project_root(), uploaded_file)
-	destination = open(dest_path, 'wb+')
-	for chunk in uploaded_file.chunks():
-		destination.write(unicode(chunk))
-	destination.close()
-	
-	#Erase all data from application
-	r = reset.Command()
-	try:
-		r.handle('reports')
-		r.handle('replicate')
-		r.handle('auth')
-	except:
-		raise
-		
-	r = runscript.Command()
-	try:
-		#Remove trailing ".py"
-		r.handle(os.path.basename(dest_path)[:-3])
-		#TODO: Remove file
-	except:
-		raise
-	
-	return
-	
+    #Turn into a real file
+    dest_path = "%s/scripts/%s" % (get_project_root(), uploaded_file)
+    destination = open(dest_path, 'wb+')
+    for chunk in uploaded_file.chunks():
+        destination.write(unicode(chunk))
+    destination.close()
+
+    #Erase all data from application
+    r = reset.Command()
+    try:
+        r.handle('reports')
+        r.handle('replicate')
+        r.handle('auth')
+    except:
+        raise
+
+    r = runscript.Command()
+    try:
+        #Remove trailing ".py"
+        r.handle(os.path.basename(dest_path)[:-3])
+        #TODO: Remove file
+    except:
+        raise
+
+    return
