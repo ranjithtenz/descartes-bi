@@ -7,7 +7,7 @@ a img { border: none; }
 a:link, a:visited { color:#ffc757; }
 a:hover { color:#ffe761; }
 
-
+.tc { text-align: center; }
 
 #flash_messages { margin: 8px; padding: 5px; float: none; text-align: center; font-size: 120%; font-weight: bold; }
 #flash_messages img { vertical-align: middle; }
