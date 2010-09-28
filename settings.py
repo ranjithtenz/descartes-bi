@@ -7,7 +7,7 @@ DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 DEBUG_APPS_DJANGO_EXTENSIONS = False
 DEVELOPMENT = False
-SERVE_STATIC_CONTENT = False
+SERVE_STATIC_CONTENT = True
 
 import os
 PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), "./"))
@@ -145,7 +145,7 @@ except ImportError:
 
 TEMPLATE_CONTEXT_PROCESSORS = (
     "django.core.context_processors.auth",
-    "django.core.context_processors.debug",
+    #"django.core.context_processors.debug",
     "django.core.context_processors.i18n",
     "django.core.context_processors.media",
     'django.core.context_processors.request',
