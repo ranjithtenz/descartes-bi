@@ -22,7 +22,7 @@ register = Library()
 
 @register.filter
 def hash(h, key):
-	try:
-		return h[key]
-	except:
-		return ''
+    try:
+        return h[key]
+    except:
+        return ''

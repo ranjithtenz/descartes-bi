@@ -16,14 +16,13 @@
 #    along with descartes-bi.  If not, see <http://www.gnu.org/licenses/>.
 #
 
-#from django.template import Node, Variable
-from django.template import TemplateSyntaxError, Library, VariableDoesNotExist
-#from django.conf import settings
+from django.template import Library
 
 register = Library()
 
 @register.simple_tag
 def project_name():
-	from django.conf import settings
-	return settings.PROJECT_TITLE
-	
+    """Tag to return the current project's title"""
+    from django.conf import settings
+    return settings.PROJECT_TITLE
+    
