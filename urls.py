@@ -87,7 +87,7 @@ if 'replicate' in settings.INSTALLED_APPS:
         
 if settings.SERVE_STATIC_CONTENT:
     urlpatterns += patterns('',
-        (r'^site_media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': 'site_media', 'show_indexes': True}),
+        (r'^site_media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT, 'show_indexes': True}),
     )
 
 if settings.DEVELOPMENT:
