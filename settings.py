@@ -72,10 +72,7 @@ MEDIA_URL = '/site_media/'
 # trailing slash.
 # Examples: "http://foo.com/media/", "/media/".
 
-#ADMIN_MEDIA_PREFIX = '/media/'
-#ADMIN_MEDIA_PREFIX = '/admin_media/'
 ADMIN_MEDIA_PREFIX = MEDIA_URL + 'admin_media/'
-
 
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = '@mff4*!u6*nc5+0pmkvcu#$&n1mq=n=+mb6g%2!ivyj3_m_g-1'
@@ -111,7 +108,6 @@ INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
-#    'django.contrib.sites',
     'django.contrib.admin',
     'reports',
     'wsgi',
@@ -123,18 +119,6 @@ INSTALLED_APPS = (
 
 CUSTOMIZATION_APPS = ()
 
-if DEVELOPMENT:
-    try:
-        import django_extensions
-        INSTALLED_APPS += ('django_extensions',)
-    except ImportError:
-        pass
-
-    try:
-        import rosetta
-        INSTALLED_APPS += ('rosetta',)
-    except ImportError:
-        pass
         
 try:
     import ldap_groups
@@ -145,7 +129,6 @@ except ImportError:
 
 TEMPLATE_CONTEXT_PROCESSORS = (
     "django.core.context_processors.auth",
-    #"django.core.context_processors.debug",
     "django.core.context_processors.i18n",
     "django.core.context_processors.media",
     'django.core.context_processors.request',
@@ -172,3 +155,15 @@ except ImportError:
     pass
     #print u"No file 'settings_local.py' found."
     
+if DEVELOPMENT:
+    try:
+        import django_extensions
+        INSTALLED_APPS += ('django_extensions',)
+    except ImportError:
+        pass
+
+    try:
+        import rosetta
+        INSTALLED_APPS += ('rosetta',)
+    except ImportError:
+        pass
