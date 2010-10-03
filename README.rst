@@ -22,6 +22,16 @@ By default the project is set up to run on a SQLite database. Run::
 
     $ python manage.py syncdb
 
+Point SOURCE_DATABASE_* to the data source from with you will extract the data for your charts:
+Example:
+
+    SOURCE_DATABASE_ENGINE = 'mysql'
+    SOURCE_DATABASE_NAME = 'domain_users'
+    SOURCE_DATABASE_USER = 'it_user1'            
+    SOURCE_DATABASE_PASSWORD = 'it_user_password'
+    SOURCE_DATABASE_HOST = ''                    
+    SOURCE_DATABASE_PORT = ''
+
 
 Executing
 =========
@@ -36,6 +46,12 @@ Or since version 0.8, there is an experimental feature to integrate the tornado 
 To try this feature use::
 
     $ python manage.py runtornado
+
+
+Creating charts
+===============
+
+Got into the admin site and start creating SQL queries to extract data from your data source DB and combine the into different charts
 
 
 License

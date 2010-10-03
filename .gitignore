@@ -1,3 +1,7 @@
 *.orig
 *.pyc
 *.pyo
+settings_local.py
+*.swp
+*.sqlite
+
