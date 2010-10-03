@@ -60,16 +60,14 @@ admin.site.apps = [
 
 handler500 = 'common.views.error500'
 urlpatterns = patterns('',
-#	(r'^admin/(.*)', admin.site.root),
     (r'^admin/', admin.site.urls),
-#	(r'^i18n/', include('django.conf.urls.i18n')),
 
     (r'^reports/', include('reports.urls', namespace='reports')),
     (r'^grappelli/', include('grappelli.urls')),
     (r'^', include('common.urls')),
     
-    url(r'^login/$', 'django.contrib.auth.views.login', {'template_name': 'login.html'}, name='my_login'),
-    url(r'^logout/$', 'django.contrib.auth.views.logout', {'next_page' : "/"}, name='user_logout' ),
+    url(r'^login/$', 'django.contrib.auth.views.login', {'template_name':'login.html'}, name='my_login'),
+    url(r'^logout/$', 'django.contrib.auth.views.logout', {'next_page':"/"}, name='user_logout' ),
     url(r'^myaccount/password_change/$', 'django.contrib.auth.views.password_change', {'template_name': 'password_change_form.html'}, name='my_password_change'),
     url(r'^accounts/password_change_ok/$', 'django.contrib.auth.views.password_change_done', {'template_name': 'password_change_done.html'}),
     
