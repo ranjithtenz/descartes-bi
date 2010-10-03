@@ -40,4 +40,4 @@ To try this feature use::
 
 License
 =======
-Descartes-bi in licensed under the terms of the GNU License version 3, see the included LICENSE file.
+Descartes-bi is licensed under the terms of the GNU License version 3, see the included LICENSE file.

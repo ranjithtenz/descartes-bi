@@ -15,18 +15,17 @@
 #    You should have received a copy of the GNU General Public License
 #    along with descartes-bi.  If not, see <http://www.gnu.org/licenses/>.
 #
-
+import django
 from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render_to_response, get_object_or_404
 from django.template import RequestContext
 from django.utils.translation import ugettext as _
+from django.conf import settings
+from django.utils.importlib import import_module
 
 from models import Report, Menuitem, GroupPermission, UserPermission, User, SeriesStatistic, ReportStatistic
 from models import FILTER_TYPE_DATE, FILTER_TYPE_COMBO
 from forms import FilterForm
-
-from django.conf import settings
-from django.utils.importlib import import_module
 
 import datetime
 import re
@@ -60,16 +59,26 @@ def load_backend(backend_name):
                 raise # If there's some other error, this must be an error in Django itself.
 
 backend_source = load_backend(settings.SOURCE_DATABASE_ENGINE)
-
-connection_source = backend_source.DatabaseWrapper({
-    'DATABASE_HOST': settings.SOURCE_DATABASE_HOST,
-    'DATABASE_NAME': settings.SOURCE_DATABASE_NAME,
-    'DATABASE_OPTIONS': {},
-    'DATABASE_PASSWORD': settings.SOURCE_DATABASE_PASSWORD,
-    'DATABASE_PORT': settings.SOURCE_DATABASE_PORT,
-    'DATABASE_USER': settings.SOURCE_DATABASE_USER,
-    'TIME_ZONE': settings.TIME_ZONE,
-})
+if django.VERSION >= (1,2):
+    connection_source = backend_source.DatabaseWrapper({
+        'HOST': settings.SOURCE_DATABASE_HOST,
+        'NAME': settings.SOURCE_DATABASE_NAME,
+        'OPTIONS': {},
+        'PASSWORD': settings.SOURCE_DATABASE_PASSWORD,
+        'PORT': settings.SOURCE_DATABASE_PORT,
+        'USER': settings.SOURCE_DATABASE_USER,
+        'ZONE': settings.TIME_ZONE,
+    })
+else:
+    connection_source = backend_source.DatabaseWrapper({
+        'DATABASE_HOST': settings.SOURCE_DATABASE_HOST,
+        'DATABASE_NAME': settings.SOURCE_DATABASE_NAME,
+        'DATABASE_OPTIONS': {},
+        'DATABASE_PASSWORD': settings.SOURCE_DATABASE_PASSWORD,
+        'DATABASE_PORT': settings.SOURCE_DATABASE_PORT,
+        'DATABASE_USER': settings.SOURCE_DATABASE_USER,
+        'TIME_ZONE': settings.TIME_ZONE,
+    })
 
 def ajax_report_benchmarks(request, report_id):
     #TODO: change this to get values from serie_statistics instead
