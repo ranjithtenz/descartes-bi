@@ -56,7 +56,7 @@ To try this feature use::
 Creating charts
 ===============
 
-Got into the admin site and start creating SQL queries to extract data from your data source DB and combine the into different charts
+Go into the admin site and start creating SQL queries to extract data from your data source DB and combine them into different charts.
 
 
 License
