@@ -20,43 +20,7 @@ from django.conf import settings
 from django.contrib import admin
 from django.utils.translation import ugettext as _
 
-from grappelli.sites import GrappelliSite
-
-admin.site = GrappelliSite()
 admin.autodiscover()
-admin.site.apps = [
-    {
-        'name': _(u'Reports'),
-        'classes': '',
-        'show_apps': False,
-        'apps': ['reports']
-    },
-    {
-        'name': _(u'Replication'),
-        'classes': '',
-        'show_apps': False,
-        'apps': ['replicate']
-    },
-    {
-        'name': _(u'User Management'),
-        'classes': '',
-        'show_apps': False,
-        'apps': ['auth', 'user']
-    },
-    {
-        'name': 'Grappelli',
-        'classes': 'collapse-closed',
-        'show_apps': False,
-        'apps': ['grappelli']
-    },
-#    {
-#        'name': 'Sites',
-#        'classes': 'collapse-closed',
-#        'show_apps': False,
-#        'apps': ['sites']
-#    }
-]
-
 
 handler500 = 'common.views.error500'
 urlpatterns = patterns('',

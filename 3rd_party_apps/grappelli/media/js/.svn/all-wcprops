@@ -1,0 +1,173 @@
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/svn/!svn/ver/1182/tags/releases/2.1.1/grappelli/media/js
+END
+compress.py
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/1182/tags/releases/2.1.1/grappelli/media/js/compress.py
+END
+SelectFilter2.js
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/1182/tags/releases/2.1.1/grappelli/media/js/SelectFilter2.js
+END
+getElementsBySelector.js
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/1182/tags/releases/2.1.1/grappelli/media/js/getElementsBySelector.js
+END
+dateparse.js
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/1182/tags/releases/2.1.1/grappelli/media/js/dateparse.js
+END
+documentation.js
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/1182/tags/releases/2.1.1/grappelli/media/js/documentation.js
+END
+calendar.js
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/1182/tags/releases/2.1.1/grappelli/media/js/calendar.js
+END
+grappelli.timepicker.js
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/1182/tags/releases/2.1.1/grappelli/media/js/grappelli.timepicker.js
+END
+urlify.js
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/1182/tags/releases/2.1.1/grappelli/media/js/urlify.js
+END
+grappelli.js
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/1182/tags/releases/2.1.1/grappelli/media/js/grappelli.js
+END
+jquery.js
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/svn/!svn/ver/1182/tags/releases/2.1.1/grappelli/media/js/jquery.js
+END
+jquery.init.js
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/1182/tags/releases/2.1.1/grappelli/media/js/jquery.init.js
+END
+grappelli.init.js
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/1182/tags/releases/2.1.1/grappelli/media/js/grappelli.init.js
+END
+actions.min.js
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/1182/tags/releases/2.1.1/grappelli/media/js/actions.min.js
+END
+prepopulate.min.js
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/1182/tags/releases/2.1.1/grappelli/media/js/prepopulate.min.js
+END
+inlines.min.js
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/1182/tags/releases/2.1.1/grappelli/media/js/inlines.min.js
+END
+collapse.min.js
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/1182/tags/releases/2.1.1/grappelli/media/js/collapse.min.js
+END
+SelectBox.js
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/1182/tags/releases/2.1.1/grappelli/media/js/SelectBox.js
+END
+core.js
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/svn/!svn/ver/1182/tags/releases/2.1.1/grappelli/media/js/core.js
+END
+timeparse.js
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/svn/!svn/ver/1182/tags/releases/2.1.1/grappelli/media/js/timeparse.js
+END
+GRAPPELLI_INFO.TXT
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/1182/tags/releases/2.1.1/grappelli/media/js/GRAPPELLI_INFO.TXT
+END
+grappelli.change_list.js
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/1182/tags/releases/2.1.1/grappelli/media/js/grappelli.change_list.js
+END
+actions.js
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/1182/tags/releases/2.1.1/grappelli/media/js/actions.js
+END
+jquery.min.js
+K 25
+svn:wc:ra_dav:version-url
+V 71
+/svn/!svn/ver/1182/tags/releases/2.1.1/grappelli/media/js/jquery.min.js
+END
+grappelli.min.js
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/svn/!svn/ver/1182/tags/releases/2.1.1/grappelli/media/js/grappelli.min.js
+END
+inlines.js
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/svn/!svn/ver/1182/tags/releases/2.1.1/grappelli/media/js/inlines.js
+END
+grappelli.RelatedObjectLookups.js
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/!svn/ver/1182/tags/releases/2.1.1/grappelli/media/js/grappelli.RelatedObjectLookups.js
+END
+collapse.js
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/1182/tags/releases/2.1.1/grappelli/media/js/collapse.js
+END
+LICENSE-JQUERY.txt
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/1182/tags/releases/2.1.1/grappelli/media/js/LICENSE-JQUERY.txt
+END

@@ -100,13 +100,13 @@ TEMPLATE_DIRS = (
 )
 
 INSTALLED_APPS = (
+    'grappelli',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.admin',
     'reports',
     'wsgi',
-    'grappelli',
     'common',
     'django.contrib.humanize',
     'tornado_app',
