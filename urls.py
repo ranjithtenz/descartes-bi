@@ -38,8 +38,8 @@ urlpatterns = patterns('',
     (r'^favicon\.ico$', 'django.views.generic.simple.redirect_to', {'url': '%simages/favicon.ico' % settings.MEDIA_URL}),
 )
 
-for capp in getattr(settings, 'CUSTOMIZATION_APPS', []):
-    exec "urlpatterns += patterns('', (r'^customization/%s/', include('%s.urls', namespace='%s')), )"  % (capp, capp, capp) 
+#for capp in getattr(settings, 'CUSTOMIZATION_APPS', []):
+#    exec "urlpatterns += patterns('', (r'^customization/%s/', include('%s.urls', namespace='%s')), )"  % (capp, capp, capp) 
 
 if 'ldap_groups' in settings.INSTALLED_APPS:
     urlpatterns += patterns('', (r'^ldap/', include('ldap_groups.urls')),)	
@@ -47,14 +47,14 @@ if 'ldap_groups' in settings.INSTALLED_APPS:
 if 'replicate' in settings.INSTALLED_APPS:
     urlpatterns += patterns('', (r'^replicate/', include('replicate.urls')),)
         
-if settings.SERVE_STATIC_CONTENT:
+if settings.DEVELOPMENT:
     urlpatterns += patterns('',
-        (r'^site_media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT, 'show_indexes': True}),
+        (r'^%s-site_media/(?P<path>.*)$' % settings.PROJECT_NAME,
+            'django.views.static.serve',
+            {'document_root':'site_media', 'show_indexes':True}),
     )
 
-if settings.DEVELOPMENT:
     if 'rosetta' in settings.INSTALLED_APPS:
         urlpatterns += patterns('',
-            url(r'^rosetta/', include('rosetta.urls')),
-        )
-
+            url(r'^rosetta/', include('rosetta.urls'), name='rosetta'),
+	)
