@@ -3,7 +3,7 @@ Descartes-bi
 
 Descartes-bi is a database agnostic, Django based business intelligence tool.
 
-![screenshot](http://img263.imageshack.us/img263/1582/screenshotbo.png)
+![screenshot](http://img855.imageshack.us/img855/3107/screenshotcy.png)
 
 Implementation
 --------------
