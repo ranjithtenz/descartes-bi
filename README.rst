@@ -2,7 +2,10 @@
 Descartes-bi	
 ============
 
-Descartes-bi is a database agnostic, Django based business intelligence.
+Descartes-bi is a database agnostic, Django based business intelligence tool.
+
+![screenshot](http://img263.imageshack.us/img263/1582/screenshotbo.png)
+
 
 Implementation
 ==============
@@ -13,7 +16,7 @@ Installation
 ============
 
  * Python 2.6
- * Django 1.1.1+
+ * Django 1.2.5
 
 Setting up
 ==========
@@ -45,12 +48,6 @@ Use::
 
     $ python manage.py runserver
 
-
-Or since version 0.8, there is an experimental feature to integrate the tornado web server to allow Descartes-bi to run completly independent.
-
-To try this feature use::
-
-    $ python manage.py runtornado
 
 
 Creating charts
